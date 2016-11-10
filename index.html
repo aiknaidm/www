@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<!--swiper操作区-->
+	 <div class="swiper-container" style="width: 100%;height: 400px">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	        	<ul>
+		        	<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><img src="images/20150419H2749_5r4WF.thumb.700_0.png" id="myImage" />
+		        	</li>
+		        	<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+		        		<button id="imgbtn">更改头像</button>	
+		        	</li>
+		        	<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s">
+		        		我是谁谁谁，我从事这个行业多久多久多久
+		        	</li>
+		        	<li class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+		        		兴趣爱好什么什么什么
+		        	</li>
+	        	</ul>
+	        </div>	        
+	        <div class="swiper-slide">
+	        	<dl class="slide1">
+		        	<dt class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+		        		<img src="images/20150419H2749_5r4WF.thumb.700_0.png">
+
+		        	</dt>
+		        	<dd>
+		        		11223344
+		        	</dd>
+		        </dl>
+		        <dl class="slide1">
+		        	<dt class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+		        		<img src="images/20150419H2749_5r4WF.thumb.700_0.png">
+
+		        	</dt>
+		        	<dd>
+		        		11223344
+		        	</dd>
+		        </dl>
+		        <dl class="slide1">
+		        	<dt class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+		        		<img src="images/20150419H2749_5r4WF.thumb.700_0.png">
+
+		        	</dt>
+		        	<dd>
+		        		11223344
+		        	</dd>
+		        </dl>
+		        <dl class="slide1">
+		        	<dt class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+		        		<img src="images/20150419H2749_5r4WF.thumb.700_0.png">
+
+		        	</dt>
+		        	<dd>
+		        		11223344
+		        	</dd>
+		        </dl>
+		       
+	        </div>
+	        <div class="swiper-slide">
+	        <button id="enter">详细信息</button>
+
+	        	<div class="slide2"></div>
+	        	<div class="slide2"></div>
+	        	<div class="slide2"></div>
+	        	<div class="slide2"></div>
+	        	<div class="slide2"></div>
+
+
+
+	        </div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+
+	</div>
+<!--iscorll操作-->
+
+	<div id="myIscroll">
+		
+		<div id="header">
+			<ul>
+				<li class="iconfont">&#xe63f;</li>
+				<li>我的简历</li>
+				<li class="iconfont">&#xe600;</li> 
+
+			</ul>
+		</div>
+		<div id="wrapper">
+			<div id="scroller">
+				
+			</div>
+		</div>
+		<div id="footer">
+			<div id="f1">技能</div>
+			<div id="f2">技能</div>
+			<div id="f3">技能</div>
+			<div id="f4">技能</div>
+			
+		</div>
+	</div>
+    <script type="text/javascript" src="js/index.js">
+    	
+    </script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
+		var imgbtn = document.getElementById('imgbtn');
+
+		imgbtn.onclick=function(){
+			
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 25,
+		    destinationType: Camera.DestinationType.DATA_URL
+			});
+
+			function onSuccess(imageData) {
+			    var image = document.getElementById('myImage');
+			    image.src = "data:image/jpeg;base64," + imageData;
+			}
+
+			function onFail(message) {
+			    alert('Failed because: ' + message);
+			}
+		}
+
+		// navigator.contacts.pickContact(function(contact){
+  //      			 console.log('The following contact has been selected:' + JSON.stringify(contact));
+		//     },function(err){
+		//         console.log('Error: ' + err);
+		//     });
+	</script>
+	<script type="text/javascript">
+		
+	
+	</script>
+</body>
+</html>
